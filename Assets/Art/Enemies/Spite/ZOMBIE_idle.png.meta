@@ -1,40 +1,19 @@
 fileFormatVersion: 2
-guid: 65116d8a408a0f846957466b7615edf3
+guid: 68bfa33fa513cfe4cad5b593b439fec6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5137042977766389640
-    second: NVC_ouch_0
+      213: 3043218718810021550
+    second: ZOMBIE_idle_0
   - first:
-      213: -2539345144969181511
-    second: NVC_ouch_1
+      213: 847924410125524142
+    second: ZOMBIE_idle_1
   - first:
-      213: 6559112036393238251
-    second: NVC_ouch_2
+      213: 5120074803983883283
+    second: ZOMBIE_idle_2
   - first:
-      213: 3658555296467838106
-    second: NVC_ouch_3
-  - first:
-      213: -1543079781794070883
-    second: NVC_ouch_4
-  - first:
-      213: -3498047825136310565
-    second: NVC_ouch_5
-  - first:
-      213: -3372843327665869310
-    second: NVC_ouch_6
-  - first:
-      213: -33574943809868332
-    second: NVC_ouch_7
-  - first:
-      213: 8866305801519062668
-    second: NVC_ouch_8
-  - first:
-      213: -3904060169140193344
-    second: NVC_ouch_9
-  - first:
-      213: -4996099872028784201
-    second: NVC_ouch_10
+      213: -796497183994355188
+    second: ZOMBIE_idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NVC_ouch_0
+      name: ZOMBIE_idle_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 20
-        width: 64
-        height: 64
+        x: 39
+        y: 40
+        width: 20
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 878c15201ae85b8b0800000000000000
-      internalID: -5137042977766389640
+      spriteID: eae9d741d4fab3a20800000000000000
+      internalID: 3043218718810021550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NVC_ouch_1
+      name: ZOMBIE_idle_1
       rect:
         serializedVersion: 2
-        x: 126
-        y: 20
-        width: 64
-        height: 64
+        x: 139
+        y: 40
+        width: 20
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b6cfff6b0f62ccd0800000000000000
-      internalID: -2539345144969181511
+      spriteID: eac1aed22ce64cb00800000000000000
+      internalID: 847924410125524142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NVC_ouch_2
+      name: ZOMBIE_idle_2
       rect:
         serializedVersion: 2
-        x: 223
-        y: 21
-        width: 64
-        height: 64
+        x: 239
+        y: 40
+        width: 20
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bee353b35a5a60b50800000000000000
-      internalID: 6559112036393238251
+      spriteID: 31c13ea28e82e0740800000000000000
+      internalID: 5120074803983883283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NVC_ouch_4
+      name: ZOMBIE_idle_3
       rect:
         serializedVersion: 2
-        x: 324
-        y: 22
-        width: 64
-        height: 64
+        x: 339
+        y: 40
+        width: 20
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,30 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9eb3123d11e59ae0800000000000000
-      internalID: -1543079781794070883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NVC_ouch_5
-      rect:
-        serializedVersion: 2
-        x: 428
-        y: 20
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de6983c9fa065af4b932a77e33ad1bb9
-      internalID: 1437224770
+      spriteID: c02ea6bf70642f4f0800000000000000
+      internalID: -796497183994355188
       vertices: []
       indices: 
       edges: []
@@ -245,7 +202,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: af9008cc6c838d748b172676b4ea238b
+    spriteID: cc548789fec5bb94bab1a3b527ecbbbe
     internalID: 0
     vertices: []
     indices: 
@@ -255,14 +212,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      NVC_ouch_0: -5137042977766389640
-      NVC_ouch_1: -2539345144969181511
-      NVC_ouch_2: 6559112036393238251
-      NVC_ouch_3: 3658555296467838106
-      NVC_ouch_4: -1543079781794070883
-      NVC_ouch_5: 1437224770
+      ZOMBIE_idle_0: 3043218718810021550
+      ZOMBIE_idle_1: 847924410125524142
+      ZOMBIE_idle_2: 5120074803983883283
+      ZOMBIE_idle_3: -796497183994355188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

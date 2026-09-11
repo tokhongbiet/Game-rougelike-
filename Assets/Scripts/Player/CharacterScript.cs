@@ -4,12 +4,19 @@ using System.Collections;
 
 public class CharacterScript : MonoBehaviour
 {
+
+    //Base Stats
     public float moveSpeed = 5f;
     public float HP = 10f;
 
+    //Effects
+    public bool invulnerability = false;
+
+    //Movements
     private Vector2 movement;
     private bool canDash = true;
 
+    //Components
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -89,7 +96,7 @@ public class CharacterScript : MonoBehaviour
         {
             HP -= 1;
 
-            animator.SetTrigger("Ouch");
+            animator.SetTrigger("Damaged");
 
             Debug.Log("Health: " + HP);
         }
