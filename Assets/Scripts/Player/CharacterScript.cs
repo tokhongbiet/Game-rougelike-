@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class CharacterScript : MonoBehaviour
     //Base Stats
     public float moveSpeed = 5f;
     public float HP = 10f;
-
+  
     //Effects
     public bool invulnerability = false;
+    public event Action<float> OnHealthChanged;// de cap nhat mau qua ben UI
 
     //Movements
     private Vector2 movement;
@@ -97,7 +99,7 @@ public class CharacterScript : MonoBehaviour
             HP -= 1;
 
             animator.SetTrigger("Damaged");
-
+            OnHealthChanged?.Invoke(HP);//goi cho UI de cap nhat mau
             Debug.Log("Health: " + HP);
         }
     }
