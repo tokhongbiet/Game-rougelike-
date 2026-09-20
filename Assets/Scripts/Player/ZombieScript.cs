@@ -1,6 +1,10 @@
 using UnityEngine;
 public class ZombieScript : MonoBehaviour
 {
+    [Header("Drop khi chet")]
+    public GameObject bulletDropPrefab;
+    public float bulletDropChance = 0.3f; // 0.3 = 30%
+
     public float moveSpeed = 2f;
     public float HP = 10f;
     public Transform player;
@@ -33,6 +37,18 @@ public class ZombieScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("PlayerGunBullet"))
+        {
+            HP -= 1;
+            Debug.Log("Zombie bi ban");
+
+            if (HP <= 0)
+            {
+                Die();
+            }
+        }
+
+
         if (collision.gameObject.CompareTag("Player"))
         {
             CharacterScript player = collision.gameObject.GetComponent<CharacterScript>();
@@ -43,6 +59,21 @@ public class ZombieScript : MonoBehaviour
 
                 Debug.Log("Zombie health: " + HP);
             }
+
+            if (HP <= 0)
+            {
+                Die();
+            }
         }
+    }
+    private void Die()
+    {
+        // Tung xac suat de quyet dinh co rot dan hay khong
+        if (bulletDropPrefab != null && Random.value <= bulletDropChance)
+        {
+            Instantiate(bulletDropPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
     }
 }

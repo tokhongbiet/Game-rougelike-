@@ -14,6 +14,8 @@ public class CharacterScript : MonoBehaviour
     //Effects
     public bool invulnerability = false;
     public event Action<float> OnHealthChanged;// de cap nhat mau qua ben UI
+    public event Action<int> OnAmmoChanged; // de cap nhat so dan qua ben UI neu can
+
 
     //Movements
     private Vector2 movement;
@@ -103,5 +105,11 @@ public class CharacterScript : MonoBehaviour
             OnHealthChanged?.Invoke(HP);//goi cho UI de cap nhat mau
             Debug.Log("Health: " + HP);
         }
+    }
+    public void AddAmmo(int amount)
+    {
+        bulletCount += amount;
+        OnAmmoChanged?.Invoke(bulletCount);
+        Debug.Log("Ammo: " + bulletCount);
     }
 }
