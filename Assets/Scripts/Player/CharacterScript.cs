@@ -9,7 +9,8 @@ public class CharacterScript : MonoBehaviour
     //Base Stats
     public float moveSpeed = 5f;
     public float HP = 10f;
-  
+    public int bulletCount = 10;
+
     //Effects
     public bool invulnerability = false;
     public event Action<float> OnHealthChanged;// de cap nhat mau qua ben UI

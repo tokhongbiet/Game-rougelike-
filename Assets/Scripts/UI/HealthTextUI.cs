@@ -4,6 +4,7 @@ using TMPro;
 public class HealthTextUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI bulletCountText;
     [SerializeField] private CharacterScript playerScript;
 
     private void Start()
@@ -21,6 +22,14 @@ public class HealthTextUI : MonoBehaviour
         if (playerScript != null)
         {
             playerScript.OnHealthChanged -= UpdateHealthUI;
+        }
+    }
+
+    private void Update()
+    {
+        if (bulletCountText != null && playerScript != null)
+        {
+            bulletCountText.text = playerScript.bulletCount.ToString();
         }
     }
 
