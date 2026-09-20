@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,5 +24,19 @@ public class SwordScript : MonoBehaviour
     public void EndAttack()
     {
         isAttacking = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Danger"))
+        {
+            ZombieScript zombie = collision.GetComponent<ZombieScript>();
+
+            if (zombie != null)
+            {
+                Debug.Log("Zombie bi chem");
+                zombie.HP -= 1;
+            }
+        }
     }
 }

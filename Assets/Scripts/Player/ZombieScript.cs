@@ -48,7 +48,6 @@ public class ZombieScript : MonoBehaviour
             }
         }
 
-
         if (collision.gameObject.CompareTag("Player"))
         {
             CharacterScript player = collision.gameObject.GetComponent<CharacterScript>();
