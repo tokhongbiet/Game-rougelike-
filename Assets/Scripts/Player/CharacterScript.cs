@@ -9,6 +9,7 @@ public class CharacterScript : MonoBehaviour
     //Base Stats
     public float moveSpeed = 5f;
     public float HP = 10f;
+    public float maxHP = 10;
     public int bulletCount = 10;
 
     //Effects
@@ -111,5 +112,18 @@ public class CharacterScript : MonoBehaviour
         bulletCount += amount;
         OnAmmoChanged?.Invoke(bulletCount);
         Debug.Log("Ammo: " + bulletCount);
+    }
+
+    public void AddHealth(int amount)
+    {
+        HP += amount;
+
+        if (HP > maxHP)
+        {
+            HP = maxHP;
+        }
+
+        OnHealthChanged?.Invoke(HP);
+        Debug.Log("Health: " + HP);
     }
 }
