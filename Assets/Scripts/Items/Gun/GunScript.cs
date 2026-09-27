@@ -3,33 +3,47 @@ using UnityEngine.InputSystem;
 
 public class GunScript : MonoBehaviour
 {
+    
+    [Header("Player")]
+    public Transform playerTransform;
+    public Vector2 offset = new Vector2(0.3f, 0f);
 
-    public CharacterScript playerScript;
-
+    [Header("Gun")]
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 10f;
+    public CharacterScript playerScript;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        if (Mouse.current == null || Camera.main == null 
+            || playerTransform == null || playerScript == null) return;
 
+        // 1. Đặt vị trí súng theo player
+        float dirX = playerScript.isFacingLeft ? -1f : 1f;
+        transform.position = playerTransform.position + new Vector3(offset.x * dirX, offset.y, 0f);
+
+        // 2. Lấy vị trí chuột trong world space
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         mousePosition.z = 0f;
 
+        // 3. Tính hướng + góc xoay
         Vector3 direction = mousePosition - transform.position;
-
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+        // 4. ⭐ BÙ GÓC KHI CHĨA SANG TRÁI
+        //    Nếu góc > 90° hoặc < -90° → súng đang chĩa sang trái
+        //    → cộng 180° để lộn lại đúng hướng
+        if (angle > 90f || angle < -90f)
+        {
+            angle += 180f;
+        }
+
+        // 5. Áp dụng góc xoay
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
+        // 6. Bắn
         if (Mouse.current.leftButton.wasPressedThisFrame && playerScript.bulletCount > 0)
         {
             GameObject bullet = Instantiate(
@@ -39,6 +53,7 @@ public class GunScript : MonoBehaviour
             );
 
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            // Đạn vẫn bay theo `direction` gốc (về phía chuột), KHÔNG dùng angle đã bù
             rb.linearVelocity = direction.normalized * bulletSpeed;
 
             playerScript.bulletCount--;

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System;
+using System.Reflection;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -17,6 +18,15 @@ public class CharacterScript : MonoBehaviour
     public event Action<float> OnHealthChanged;// de cap nhat mau qua ben UI
     public event Action<int> OnAmmoChanged; // de cap nhat so dan qua ben UI neu can
 
+    //Huong xoay
+    [Header("Facing")]
+    public bool isFacingLeft = false;
+    public bool faceMouse = true;
+    public float facingDeadZone = 0.2f;
+
+    [Header("Weapon")]
+    public Transform weaponHolder;
+
 
     //Movements
     private Vector2 movement;
@@ -27,6 +37,9 @@ public class CharacterScript : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    //time
+    private float lastDamageTime = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,31 +49,11 @@ public class CharacterScript : MonoBehaviour
 
     void Update()
     {
-        movement = Vector2.zero;
+        HandleMovement();
 
-        if (Keyboard.current.wKey.isPressed)
-            movement.y += 1;
-
-        if (Keyboard.current.sKey.isPressed)
-            movement.y -= 1;
-
-        if (Keyboard.current.aKey.isPressed)
-            movement.x -= 1;
-
-        if (Keyboard.current.dKey.isPressed)
-            movement.x += 1;
-
-        movement = movement.normalized;
-
-        animator.SetBool("isMoving", movement != Vector2.zero);
-
-        if (movement.x < 0)
+        if (faceMouse)
         {
-            spriteRenderer.flipX = true;
-        }
-        else if (movement.x > 0)
-        {
-            spriteRenderer.flipX = false;
+            HandleMouseFacing();
         }
 
         if (canDash == true)
@@ -73,13 +66,75 @@ public class CharacterScript : MonoBehaviour
             }
         }
 
-    }
+        if (HP <= 0)
+        {
+            Destroy(gameObject);
+        }
 
+    }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    //di chuyen
+    void HandleMovement()
+    {
+        movement = Vector2.zero;
+
+        if (Keyboard.current.wKey.isPressed) movement.y += 1;
+        if (Keyboard.current.sKey.isPressed) movement.y -= 1;
+        if (Keyboard.current.aKey.isPressed) movement.x -= 1;
+        if (Keyboard.current.dKey.isPressed) movement.x += 1;
+
+        movement = movement.normalized;
+
+        if (animator != null && animator.isInitialized)
+        {
+            animator.SetBool("isMoving", movement != Vector2.zero);
+        }
+    }
+
+    //Quay mat theo chuot
+    void HandleMouseFacing()
+    {
+        if (Mouse.current == null || Camera.main == null) return;
+
+        Vector3 mouseScreenPos = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        mouseWorldPos.z = 0f;
+
+        float diffX = mouseWorldPos.x - transform.position.x;
+
+        if (diffX < -facingDeadZone)
+        {
+            SetFacing(true);
+        }
+        else if (diffX > facingDeadZone)
+        {
+            SetFacing(false);
+        }
+    }
+
+    public void SetFacing(bool facingLeft)
+    {
+        isFacingLeft = facingLeft;
+        ApplyFacing();
+    }
+
+    public void Flip()
+    {
+        SetFacing(!isFacingLeft);
+    }
+
+    void ApplyFacing()
+    {
+        transform.localScale = new Vector3(isFacingLeft ? -1f : 1f, 1f, 1f);
+    }
+
+
+    //
     IEnumerator Dash()
     {
 
@@ -96,11 +151,18 @@ public class CharacterScript : MonoBehaviour
         canDash = true;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    //Gay dame
+    private float damageInterval = 1f;
+
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Danger"))
         {
-            HP -= 1;
+            if (Time.time - lastDamageTime >= damageInterval)
+            {
+                lastDamageTime = Time.time;
+                HP -= 1;
+            }
 
             animator.SetTrigger("Damaged");
             OnHealthChanged?.Invoke(HP);//goi cho UI de cap nhat mau
@@ -126,4 +188,5 @@ public class CharacterScript : MonoBehaviour
         OnHealthChanged?.Invoke(HP);
         Debug.Log("Health: " + HP);
     }
+
 }
