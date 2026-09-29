@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System;
@@ -68,7 +68,7 @@ public class CharacterScript : MonoBehaviour
 
         if (HP <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
 
     }
@@ -187,6 +187,17 @@ public class CharacterScript : MonoBehaviour
 
         OnHealthChanged?.Invoke(HP);
         Debug.Log("Health: " + HP);
+    }
+    void Die()
+    {
+        // Gọi GameManager hiển thị UI Game Over
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.GameOver();
+        }
+
+        // Tắt GameObject hoặc Disable Script để ngưng di chuyển/nhận Input
+        gameObject.SetActive(false);
     }
 
 }
