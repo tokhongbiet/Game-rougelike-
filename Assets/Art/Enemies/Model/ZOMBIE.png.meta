@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 30b988145b1ffb54b803f1cd9e8cb6f8
+guid: 182a986401857ab4693b6a243e3d5ea9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5275804278734777688
-    second: ZOMBIE_run_0
-  - first:
-      213: 1806277043458668946
-    second: ZOMBIE_run_1
-  - first:
-      213: 565979196030136896
-    second: ZOMBIE_run_2
-  - first:
-      213: 8916578047376677821
-    second: ZOMBIE_run_3
+      213: 4097690589661029976
+    second: ZOMBIE_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -107,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ZOMBIE_run_0
+      name: ZOMBIE_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 39
-        width: 32
-        height: 38
+        x: 47
+        y: 0
+        width: 34
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,74 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85de8720a0c673940800000000000000
-      internalID: 5275804278734777688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZOMBIE_run_1
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 40
-        width: 24
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 299fb45a66f211910800000000000000
-      internalID: 1806277043458668946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZOMBIE_run_2
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 40
-        width: 29
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04233a18413cad700800000000000000
-      internalID: 565979196030136896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZOMBIE_run_3
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 39
-        width: 21
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dbbdee5fd7c0ebb70800000000000000
-      internalID: 8916578047376677821
+      spriteID: 856e43c71ebedd830800000000000000
+      internalID: 4097690589661029976
       vertices: []
       indices: 
       edges: []
@@ -212,10 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ZOMBIE_run_0: 5275804278734777688
-      ZOMBIE_run_1: 1806277043458668946
-      ZOMBIE_run_2: 565979196030136896
-      ZOMBIE_run_3: 8916578047376677821
+      ZOMBIE_0: 4097690589661029976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 83952ee4d29e1d74485c3123c9aedb8c
+guid: 2f2d9d46b15045943a6f9efa122ea590
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2426619597679320236
-    second: ZOMBIE_idle_no_blood_0
+      213: 2965926736167262071
+    second: wood_chest_break_0
   - first:
-      213: 258575630353366144
-    second: ZOMBIE_idle_no_blood_1
-  - first:
-      213: -2906557025086631602
-    second: ZOMBIE_idle_no_blood_2
-  - first:
-      213: 2015994613606329027
-    second: ZOMBIE_idle_no_blood_3
-  - first:
-      213: -8091002039444491146
-    second: ZOMBIE_idle_no_blood_4
+      213: -7399333229654569705
+    second: wood_chest_break_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,115 +101,62 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ZOMBIE_idle_no_blood_0
+      name: wood_chest_break_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 40
-        width: 20
-        height: 36
+        x: 374
+        y: 362
+        width: 301
+        height: 252
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 453a25b255ae25ed0800000000000000
-      internalID: -2426619597679320236
+      spriteID: 777551307a6192920800000000000000
+      internalID: 2965926736167262071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZOMBIE_idle_no_blood_1
+      name: wood_chest_break_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 40
-        width: 20
-        height: 35
+        x: 1359
+        y: 362
+        width: 301
+        height: 252
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08cf8c27a25a69300800000000000000
-      internalID: 258575630353366144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZOMBIE_idle_no_blood_2
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 40
-        width: 20
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e419b4809c5d9a7d0800000000000000
-      internalID: -2906557025086631602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZOMBIE_idle_no_blood_3
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 40
-        width: 20
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ca2b1d7b604afb10800000000000000
-      internalID: 2015994613606329027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZOMBIE_idle_no_blood_4
-      rect:
-        serializedVersion: 2
-        x: 439
-        y: 40
-        width: 20
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67433f9538cf6bf80800000000000000
-      internalID: -8091002039444491146
+      spriteID: 71d02b781a9405990800000000000000
+      internalID: -7399333229654569705
       vertices: []
       indices: 
       edges: []
@@ -227,7 +165,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0dbbef1b8110e004994b3c5c8795f269
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,15 +173,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      ZOMBIE_idle_no_blood_0: -2426619597679320236
-      ZOMBIE_idle_no_blood_1: 258575630353366144
-      ZOMBIE_idle_no_blood_2: -2906557025086631602
-      ZOMBIE_idle_no_blood_3: 2015994613606329027
-      ZOMBIE_idle_no_blood_4: -8091002039444491146
+      wood_chest_break_0: 2965926736167262071
+      wood_chest_break_1: -7399333229654569705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
