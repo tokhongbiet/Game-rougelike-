@@ -130,7 +130,7 @@ public class CharacterScript : MonoBehaviour
 
     void ApplyFacing()
     {
-        transform.localScale = new Vector3(isFacingLeft ? -1f : 1f, 1f, 1f);
+        spriteRenderer.flipX = isFacingLeft;
     }
 
 

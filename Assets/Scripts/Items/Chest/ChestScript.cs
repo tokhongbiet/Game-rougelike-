@@ -44,7 +44,7 @@ public class Chest : MonoBehaviour
         {
             TakeDamage(1); //moi dan tru 1 mau
         }
-        if (hit.collider.CompareTag("Sword"))
+        if (collision.gameObject.CompareTag("Sword"))
             TakeDamage(1);
     }
 }
